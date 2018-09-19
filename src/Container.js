@@ -45,8 +45,38 @@ class Container extends Component {
     this.setState({
         items: filteredItems
     });
-}
+    } 
     
+    // functions to move items between list and cart ----------------
+    moveToCart = key => {
+        console.log(key);
+        const {items, cart} = this.state;
+        const itemToMove = items.find(element => element.key === key);
+        const newCart = [...cart, itemToMove];
+        const newList = items.filter(item => {
+            item.key !== itemToMove.key;
+        });
+        console.log(newList);
+        this.setState({
+            items: newList,
+            cart: newCart
+        });
+    };
+
+    moveToList = key => {
+        console.log(key);
+        const { cart, items } = this.state;
+        const itemMovingBack = cart.find(element => element.key === key);
+        const updatedList = [...items, itemMovingBack];
+        const updatedCart = cart.filter(item => {
+            item.key !== itemMovingBack.key;
+        });
+        this.setState({
+            items: updatedList,
+            cart: updatedCart
+        });
+    };
+    // --------------------------------------------------------------
     
     render() {
         return (
