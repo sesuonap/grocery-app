@@ -1,3 +1,22 @@
+Completed: 
+- Made Container component
+- Create items and list components
+- Add items to list 
+- Delete items from list by key
+
+To Do: 
+- Create cart component
+- Add items to cart component onclick 
+- move items back and fourth onclick 
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
